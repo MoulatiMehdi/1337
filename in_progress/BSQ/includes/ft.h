@@ -27,6 +27,7 @@ typedef struct s_grid
 	char		ostacle;
 }				t_grid;
 
+int min(int a , int b,int c);
 void			init_matrix(int **mtrx, struct s_grid map);
 int				**create_matrix(int height, int width);
 char			**create_strs(int height, int width);
