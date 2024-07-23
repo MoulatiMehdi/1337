@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
+#include "ft_utils.h"
 
 char	*ft_strndup(char *src, int n)
 {
@@ -19,13 +19,13 @@ char	*ft_strndup(char *src, int n)
 	int		i;
 
 	i = 0;
-	if (src == NULL || n == 0)
+	if (src == 0 || n == 0)
 		return (0);
 	size = ft_strlen(src);
 	if (n < size)
 		size = n;
 	p = (char *)malloc((size + 1) * sizeof(char));
-	if (p == NULL)
+	if (p == 0)
 		return (0);
 	while (i < size)
 	{
@@ -41,7 +41,7 @@ int	ft_count_word(char *str, char *charset)
 {
 	int	count;
 
-	if (charset == NULL || str == NULL || str[0] == '\0')
+	if (charset == 0 || str == 0 || str[0] == '\0')
 		return (0);
 	count = 0;
 	while (*str)
