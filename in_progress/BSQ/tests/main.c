@@ -2,6 +2,11 @@
 
 int main()
 {
-    ft_putstr("Working ...\n");
+    char *map[] = {
+        "2.ox",
+        ".o",
+        ".."
+    };
+
     return 0;
 }
