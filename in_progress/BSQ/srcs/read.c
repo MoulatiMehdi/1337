@@ -10,10 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <fcntl.h>
-
-#define BUFF_SIZE 1024
+#include "ft_utils.h"
 
 long long file_size(char *filename)
 {
@@ -41,25 +38,6 @@ long long file_size(char *filename)
 	}
 	close(fd);
 	return (size);
-}
-
-void *ft_realloc(void *mem, int size)
-{
-
-	void *new_mem;
-	int i;
-
-	i = 0;
-	new_mem = malloc(size);
-	if (!new_mem)
-		return 0;
-	while (i < size)
-	{
-		((char *)new_mem)[i] = ((char *)mem)[i];
-		i++;
-	}
-	free(mem);
-	return new_mem;
 }
 
 char *read_file(char *filename)
