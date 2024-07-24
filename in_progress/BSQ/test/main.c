@@ -11,7 +11,7 @@ int main(int argc, char **argv)
     {
         printf("\033[0;30m Enter Text: (to exit press : Enter , Ctrl + z , Enter)\033[0m\n");
         str = read_input();
-        printf("%s", str);
+        printf("'%s'\n", str);
     }
     else
     {
@@ -20,7 +20,7 @@ int main(int argc, char **argv)
         {
             printf("File '%s' : \n", argv[i]);
             str = read_file(argv[i]);
-            printf("%s\n", str);
+            printf("'%s'\n", str?str:"(NULL)");
             i++;
         }
     }
