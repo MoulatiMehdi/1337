@@ -83,4 +83,5 @@ void	find_max_square(struct s_grid map)
 		i++;
 	}
 	max_size_square(mtrx, map.height, map.width, map);
+	free_grid(&mtrx);
 }
