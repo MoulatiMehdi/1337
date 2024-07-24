@@ -1,5 +1,23 @@
 #include "ft.h"
 
+void copy_grid(struct s_grid grid, char **map)
+{
+	int i;
+	int j;
+
+	i = 0;
+	while (i < grid.height)
+	{
+		j = 0;
+		while (j < grid.width)
+		{
+			grid.data[i][j] = map[i][j];
+			j++;
+		}
+		i++;
+	}
+}
+
 struct s_grid init_grid(char **map)
 {
 	struct s_grid grid;
@@ -18,23 +36,7 @@ struct s_grid init_grid(char **map)
 	return (grid);
 }
 
-void copy_grid(struct s_grid grid, char **map)
-{
-	int i;
-	int j;
 
-	i = 0;
-	while (i < grid.height)
-	{
-		j = 0;
-		while (j < grid.width)
-		{
-			grid.data[i][j] = map[i][j];
-			j++;
-		}
-		i++;
-	}
-}
 
 void print_grid(struct s_grid map)
 {
@@ -59,8 +61,6 @@ struct s_grid create_grid(char *str)
 {
 	struct s_grid grid;
 	char **table;
-	int height;
-	int width;
 
 	grid.data = NULL;
 	if (str == NULL)
