@@ -31,4 +31,6 @@ int	**create_matrix(int rows, int cols);
 void	init_matrix(int **matrx, struct s_grid map);
 
 void free_grid(void ***arr_2d);
+void	find_max_square(struct s_grid map);
+
 #endif
