@@ -1,4 +1,4 @@
-#include "ft.h"
+#include "ft_utils.h"
 
 struct s_grid init_grid(char **map, int height, int width)
 {
