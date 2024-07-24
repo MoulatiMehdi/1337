@@ -74,6 +74,5 @@ void	free_grid(void **arr_2d)
 		free(arr_2d[i]);
 		i++;
 	}
-	free(arr_2d[i]);
 	arr_2d = NULL;
 }
