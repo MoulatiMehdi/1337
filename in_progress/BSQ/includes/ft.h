@@ -15,6 +15,26 @@
 
 #include "ft_utils.h"
 
+typedef struct s_grid
+{
+	char **data;
+	int width;
+	int height;
+	char empty;
+	char full;
+	char ostacle;
+} t_grid;
+
+
+// allocate
+int	**create_matrix(int rows, int cols);
+void	init_matrix(int **matrx, struct s_grid map);
+void free_grid(void ***arr_2d);
+
+// solve 
+void	find_max_square(struct s_grid map);
+
+// parse & validate
 int get_height(char *str);
 char *get_sets(char *str);
 int is_valid_data(char **data);
