@@ -11,12 +11,12 @@
 /* ************************************************************************** */
 
 #include "ft.h"
-# include <stdlib.h>
+#include <stdlib.h>
 
-int	**create_matrix(int rows, int cols)
+int **create_matrix(int rows, int cols)
 {
-	int	**arr;
-	int	i;
+	int **arr;
+	int i;
 
 	arr = (int **)malloc(sizeof(int *) * rows);
 	i = 0;
@@ -28,10 +28,10 @@ int	**create_matrix(int rows, int cols)
 	return (arr);
 }
 
-char	**create_strs(int rows, int cols)
+char **create_strs(int rows, int cols)
 {
-	char	**arr;
-	int		i;
+	char **arr;
+	int i;
 
 	arr = (char **)malloc(sizeof(char *) * rows);
 	i = 0;
@@ -44,9 +44,9 @@ char	**create_strs(int rows, int cols)
 	return (arr);
 }
 
-void	init_matrix(int **matrx, struct s_grid map)
+void init_matrix(int **matrx, struct s_grid map)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	while (i < map.height)
@@ -62,17 +62,19 @@ void	init_matrix(int **matrx, struct s_grid map)
 	}
 }
 
-void	free_grid(void **arr_2d)
+void free_grid(void ***arr_2d)
 {
-	int	i;
+	int i;
 
 	i = 0;
-	if (!arr_2d)
-		return ;
-	while (arr_2d[i])
+	if (!*arr_2d)
+		return;
+	while ((*arr_2d)[i])
 	{
-		free(arr_2d[i]);
+		free((*arr_2d)[i]);
 		i++;
 	}
+	free(*arr_2d);
+	*arr_2d = NULL;
 	arr_2d = NULL;
 }

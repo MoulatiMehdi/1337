@@ -31,8 +31,10 @@ int	**create_matrix(int rows, int cols);
 void	init_matrix(int **matrx, struct s_grid map);
 char	**create_strs(int rows, int cols);
 
+struct s_grid create_grid(char *str);
 
-void	free_grid(void **arr_2d );
+
+void	free_grid(void ***arr_2d );
 struct s_grid create_grid(char *str);
 
 int is_valid_data(char **data);
