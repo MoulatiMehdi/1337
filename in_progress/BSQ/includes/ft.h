@@ -29,4 +29,6 @@ typedef struct s_grid
 
 int	**create_matrix(int rows, int cols);
 void	init_matrix(int **matrx, struct s_grid map);
+
+void free_grid(void ***arr_2d);
 #endif
