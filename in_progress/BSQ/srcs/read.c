@@ -12,8 +12,6 @@
 
 #include "ft_utils.h"
 
-#define BUFF_SIZE 1024
-
 long long file_size(char *filename)
 {
 	int fd;
