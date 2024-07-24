@@ -3,13 +3,17 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRCS_DIR = ./srcs/
 TEST_DIR = ./test/
+UTLS_DIR = ./utils/
 
-SRCS_FILES = read.c
+UTLS = $(addprefix $(UTLS_DIR),$(UTLS_FILES))
+
+SRCS_FILES = read.c $(UTLS) 
+UTLS_FILES = ft_realloc.c
 TEST_FILES = main.c 
 
-SRCS = $(addprefix $(SRCS_DIR),$(SRCS_FILES)) $(addprefix $(TEST_DIR),$(TEST_FILES))
+SRCS = $(addprefix $(SRCS_DIR),$(SRCS_FILES)) $(addprefix $(TEST_DIR),$(TEST_FILES)) 
 OBJS = $(SRCS:.c=.o)
-DEPS =. 
+DEPS =./includes/
 
 NAME = read.exe
 
