@@ -12,10 +12,10 @@
 
 #include "ft.h"
 
-void	fill_square(struct s_grid map, int y, int x, int length)
+void fill_square(struct s_grid map, int y, int x, int length)
 {
-	int	i;
-	int	j;
+	int i;
+	int j;
 
 	i = y;
 	j = x;
@@ -31,20 +31,20 @@ void	fill_square(struct s_grid map, int y, int x, int length)
 	}
 }
 
-void	max_size_square(int **mtrx, int height, int width, struct s_grid map)
+void max_size_square(int **mtrx, struct s_grid map)
 {
-	int	max[3];
-	int	i;
-	int	j;
+	int max[3];
+	int i;
+	int j;
 
 	i = 0;
 	max[2] = mtrx[0][0];
 	max[0] = 0;
 	max[1] = 0;
-	while (i < height)
+	while (i < map.height)
 	{
 		j = 0;
-		while (j < width)
+		while (j < map.width)
 		{
 			if (max[2] < mtrx[i][j])
 			{
@@ -59,11 +59,11 @@ void	max_size_square(int **mtrx, int height, int width, struct s_grid map)
 	fill_square(map, max[0], max[1], max[2]);
 }
 
-void	find_max_square(struct s_grid map)
+void find_max_square(struct s_grid map)
 {
-	int	i;
-	int	j;
-	int	**mtrx;
+	int i;
+	int j;
+	int **mtrx;
 
 	mtrx = create_matrix(map.height, map.width);
 	init_matrix(mtrx, map);
@@ -74,14 +74,13 @@ void	find_max_square(struct s_grid map)
 		while (j < map.width)
 		{
 			if (map.data[i][j] == map.empty)
-				mtrx[i][j] = min(mtrx[i][j - 1], mtrx[i - 1][j], mtrx[i - 1][j
-						- 1]) + 1;
+				mtrx[i][j] = min(mtrx[i][j - 1], mtrx[i - 1][j], mtrx[i - 1][j - 1]) + 1;
 			else
 				mtrx[i][j] = 0;
 			j++;
 		}
 		i++;
 	}
-	max_size_square(mtrx, map.height, map.width, map);
+	max_size_square(mtrx, map);
 	free_grid((void ***)&mtrx);
 }
