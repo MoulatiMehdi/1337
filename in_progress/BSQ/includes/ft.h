@@ -15,8 +15,23 @@
 
 #include "ft_utils.h"
 
-int get_height(char *str);
+
+typedef struct s_grid
+{
+	char **data;
+	int width;
+	int height;
+	char empty;
+	char full;
+	char ostacle;
+} t_grid;
+
+
+int	**create_matrix(int rows, int cols);
+void	init_matrix(int **matrx, struct s_grid map);
+
+
 char *get_sets(char *str);
-int is_valid_data(char **data);
+int get_height(char *str);
 
 #endif

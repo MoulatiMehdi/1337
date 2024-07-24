@@ -1,16 +1,15 @@
-#include "ft_utils.h"
+#include "ft.h"
 
-struct s_grid init_grid(char **map, int height, int width)
+struct s_grid init_grid(char **map)
 {
 	struct s_grid grid;
-
 	char *sets;
 
 	sets = get_sets(map[0]);
 
-	grid.height = height;
-	grid.width = width;
-	grid.data = create_strs(height, width);
+	grid.height = get_height(map[0]);
+	grid.width = ft_strlen(map[1]);
+	grid.data = create_strs(grid.height, grid.width);
 	grid.empty = sets[0];
 	grid.ostacle = sets[1];
 	grid.full = sets[2];
@@ -68,12 +67,8 @@ struct s_grid create_grid(char *str)
 		return grid;
 	table = ft_split(str, "\n");
 	if (!is_valid_data(table))
-	{
-		ft_putstr("Map E");
 		return grid;
-	}
 
-	grid = init_grid(table, height, width);
-	print_grid(grid);
+	grid = init_grid(table);
 	return grid;
 }
