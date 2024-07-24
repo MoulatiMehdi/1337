@@ -62,17 +62,18 @@ void	init_matrix(int **matrx, struct s_grid map)
 	}
 }
 
-void	free_grid(void **arr_2d, int height)
+void	free_grid(void **arr_2d)
 {
 	int	i;
 
 	i = 0;
 	if (!arr_2d)
 		return ;
-	while (i < height)
+	while (arr_2d[i])
 	{
 		free(arr_2d[i]);
 		i++;
 	}
+	free(arr_2d[i]);
 	arr_2d = NULL;
 }

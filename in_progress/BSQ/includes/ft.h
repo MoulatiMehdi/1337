@@ -32,6 +32,9 @@ void	init_matrix(int **matrx, struct s_grid map);
 char	**create_strs(int rows, int cols);
 
 
+void	free_grid(void **arr_2d, int height);
+struct s_grid create_grid(char *str);
+
 int is_valid_data(char **data);
 char *get_sets(char *str);
 int get_height(char *str);
