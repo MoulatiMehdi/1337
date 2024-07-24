@@ -10,16 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
+#include <stdlib.h>
+#include <fcntl.h>
 
 #define BUFF_SIZE 1024
 
-long long	file_size(char *filename)
+long long file_size(char *filename)
 {
-	int			fd;
-	char		buffer[BUFF_SIZE];
-	long long	size;
-	int			bytes;
+	int fd;
+	char buffer[BUFF_SIZE];
+	long long size;
+	int bytes;
 
 	fd = open(filename, O_RDONLY);
 	size = 0;
@@ -30,7 +31,7 @@ long long	file_size(char *filename)
 	{
 		bytes = read(fd, buffer, BUFF_SIZE);
 		if (bytes <= 0)
-			break ;
+			break;
 		size += bytes;
 	}
 	if (bytes < 0)
@@ -42,12 +43,31 @@ long long	file_size(char *filename)
 	return (size);
 }
 
-char	*read_file(char *filename)
+void *ft_realloc(void *mem, int size)
 {
-	int			fd;
-	long long	bytes;
-	char		*str;
-	int			size;
+
+	void *new_mem;
+	int i;
+
+	i = 0;
+	new_mem = malloc(size);
+	if (!new_mem)
+		return 0;
+	while (i < size)
+	{
+		((char *)new_mem)[i] = ((char *)mem)[i];
+		i++;
+	}
+	free(mem);
+	return new_mem;
+}
+
+char *read_file(char *filename)
+{
+	int fd;
+	long long bytes;
+	char *str;
+	int size;
 
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
@@ -66,4 +86,34 @@ char	*read_file(char *filename)
 	close(fd);
 	str[size] = '\0';
 	return (str);
+}
+
+char *read_input()
+{
+	char tmp_buff[BUFF_SIZE];
+	char *buffer;
+	int bytes;
+	int len;
+	int j;
+
+	buffer = (char *)malloc(sizeof(char) * BUFF_SIZE);
+	if (!buffer)
+		return NULL;
+	len = 0;
+	while (1)
+	{
+		bytes = read(0, tmp_buff, BUFF_SIZE);
+		if (bytes < 1)
+			break;
+		buffer = ft_realloc(buffer, sizeof(char) * (len + bytes + 1));
+		j = 0;
+		while (j < bytes)
+		{
+			buffer[len + j] = tmp_buff[j];
+			j++;
+		}
+		len += bytes;
+	}
+	buffer[len] = '\0';
+	return buffer;
 }
