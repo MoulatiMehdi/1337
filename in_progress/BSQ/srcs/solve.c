@@ -85,3 +85,18 @@ void	find_max_square(struct s_grid map)
 	max_size_square(mtrx, map.height, map.width, map);
 	free_grid((void ***)&mtrx);
 }
+
+void solve(char *str)
+{
+	struct s_grid grid;
+
+	grid = create_grid(str);
+	if(!grid.data)
+	{
+		write(2,"Map Error\n",10);
+		return ;
+	}
+	find_max_square(grid);
+	print_grid(grid);
+	free_grid((void ***)&grid.data);
+}
