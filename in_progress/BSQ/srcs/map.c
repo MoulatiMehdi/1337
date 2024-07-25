@@ -1,38 +1,19 @@
 #include "ft.h"
 
-void copy_grid(struct s_grid grid, char **map)
-{
-	int i;
-	int j;
-
-	i = 0;
-	while (i < grid.height)
-	{
-		j = 0;
-		while (j < grid.width)
-		{
-			grid.data[i][j] = map[i][j];
-			j++;
-		}
-		i++;
-	}
-}
-
 struct s_grid init_grid(char **map)
 {
 	struct s_grid grid;
 	char *sets;
 
 	sets = get_sets(map[0]);
-
 	grid.height = get_height(map[0]);
 	grid.width = ft_strlen(map[1]);
-	grid.data = create_strs(grid.height, grid.width);
+	grid.data = &map[1];
 	grid.empty = sets[0];
 	grid.ostacle = sets[1];
 	grid.full = sets[2];
-	copy_grid(grid, &map[1]);
-
+	free(map[0]);
+	map[0] = NULL;
 	return (grid);
 }
 
