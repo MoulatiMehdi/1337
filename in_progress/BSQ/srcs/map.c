@@ -41,17 +41,11 @@ struct s_grid init_grid(char **map)
 void print_grid(struct s_grid map)
 {
 	int i;
-	int j;
 
 	i = 0;
 	while (i < map.height)
 	{
-		j = 0;
-		while (j < map.width)
-		{
-			write(1, &map.data[i][j], 1);
-			j++;
-		}
+		write(1,map.data[i],map.width);		
 		write(1, "\n", 1);
 		i++;
 	}
