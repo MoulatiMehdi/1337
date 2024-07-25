@@ -27,6 +27,8 @@ int main(int argc, char **argv)
 		{
 			text = read_file(argv[i]);
 			solve(text);
+			if (i < argc - 1)
+				ft_putstr("\n");
 			i++;
 		}
 	}
