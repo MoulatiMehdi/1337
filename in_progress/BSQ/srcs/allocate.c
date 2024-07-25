@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "ft.h"
-#include <stdlib.h>
 
 int **create_matrix(int rows, int cols)
 {
