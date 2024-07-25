@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft.h"
+#include <stdio.h>
 
 int **create_matrix(int rows, int cols)
 {
@@ -25,22 +26,6 @@ int **create_matrix(int rows, int cols)
 		i++;
 	}
 	arr[i] = 0;
-	return (arr);
-}
-
-char **create_strs(int rows, int cols)
-{
-	char **arr;
-	int i;
-
-	arr = (char **)malloc(sizeof(char *) * rows);
-	i = 0;
-	while (i < rows)
-	{
-		arr[i] = (char *)malloc(sizeof(char) * (cols + 1));
-		arr[i][cols] = '\0';
-		i++;
-	}
 	return (arr);
 }
 
@@ -69,12 +54,12 @@ void free_grid(void ***arr_2d)
 	i = 0;
 	if (!*arr_2d)
 		return;
-	while ((*arr_2d)[i])
+	while (((*arr_2d)[i]) != NULL)
 	{
 		free((*arr_2d)[i]);
+		(*arr_2d)[i] = NULL;
 		i++;
 	}
-	free(*arr_2d);
 	*arr_2d = NULL;
 	arr_2d = NULL;
 }
