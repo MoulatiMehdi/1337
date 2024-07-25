@@ -17,13 +17,14 @@ int **create_matrix(int rows, int cols)
 	int **arr;
 	int i;
 
-	arr = (int **)malloc(sizeof(int *) * rows);
+	arr = (int **)malloc(sizeof(int *) * (rows + 1));
 	i = 0;
 	while (i < rows)
 	{
 		arr[i] = (int *)malloc(sizeof(int) * cols);
 		i++;
 	}
+	arr[i] = 0;
 	return (arr);
 }
 
