@@ -32,7 +32,6 @@ typedef struct s_grid
 int	**create_matrix(int rows, int cols);
 void	init_matrix(int **matrx, struct s_grid map);
 void	free_grid(void ***arr_2d);
-char	**create_strs(int rows, int cols);
 
 // map.c
 void print_grid(struct s_grid map);
