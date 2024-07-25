@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_utils.h"
+#include "ft.h"
 
 long long file_size(char *filename)
 {
