@@ -8,11 +8,9 @@
 int lookup(char *str);
 void populate(char *str, char ***dict);
 // parse
-void extract_word(char **str, char *word);
-void extract_number(char **str, char *number);
 char *read_dict(char *dict_filename);
-int parse_string(char *dictionary_string, char ****dict);
 char *parse_number(char *str);
+int parse_string(char *dictionary_string, char ****dict);
 
 // convert 
 int num_to_words(char *numStr, char *buffer);
