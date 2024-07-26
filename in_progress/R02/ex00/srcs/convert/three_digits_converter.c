@@ -17,7 +17,8 @@ int	convert_hundred(char *numStr, char *buffer)
 	ft_strcat(buffer, g_numbers[idx_dig][1]);
 	ft_strcat(buffer, " ");
 	ft_strcat(buffer, g_numbers[idx_suff][1]);
-	ft_strcat(buffer, " ");
+	if(numStr[1] != '0' || numStr[2] != '0')
+		ft_strcat(buffer, " and ");
 	return (0);
 }
 
@@ -38,7 +39,7 @@ int	convert_ten_unit(char *numStr, char *buffer)
 	ft_strcat(buffer, g_numbers[idx_ten][1]);
 	if (numStr[0] != '1' && numStr[1] != '0')
 	{
-		ft_strcat(buffer, " ");
+		ft_strcat(buffer, "-");
 	}
 	return (0);
 }

@@ -1,5 +1,4 @@
 #include "ft.h"
-
 extern char	***g_numbers;
 
 void	set_digits(int span, char *number, int index, char *digits)
@@ -65,6 +64,8 @@ void	update_buffer_with_magnitude(int length, char *buffer)
 	int		order_index;
 	char	*order_in_words;
 
+	if(length <= 3)
+		return ;
 	order_of_magnitude = magnitude(length);
 	order_index = lookup(order_of_magnitude);
 	order_in_words = g_numbers[order_index][1];
@@ -81,17 +82,19 @@ int	convert_to_words(int length, char *number, char *buffer)
 {
 	int		span;
 	int		index;
-	char	digits[4] = {'0', '0', '0', 0};
+	char	digits[4] ;
 
+	digits[3] = 0;
 	span = length - ((length - 1) / 3) * 3;
 	index = 0;
-	while (length >= 0)
+	while (length > 0)
 	{
 		if (!process_order_of_magnitude(length))
 			return (0);
 		set_digits(span, number, index, digits);
+
 		num_to_words(digits, buffer);
-		if(length > 3)
+		if(digits[0] != '0' || digits[1]!= '0' || digits[2] !='0')
 			update_buffer_with_magnitude(length, buffer);
 		index += span;
 		length -= span;
