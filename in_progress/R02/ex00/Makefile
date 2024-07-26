@@ -1,28 +1,35 @@
-#Compiler
-CC = cc
+DICT_FILES = parse_number.c parse.c create_dictionary.c 
+CVRT_FILES = num_to_words.c  convert_to_words.c three_digits_converter.c convert_extras.c
 
-#Compiler Flages
-CFLAGS = -Werror -Wall -Wextra
+SRCS_FILES = main.c  utils.c $(addprefix dict/,$(DICT_FILES)) $(addprefix convert/,$(CVRT_FILES)) 
+SRCS_DIR = ./srcs/
 
-#Sources files
-SRC = main.c num_to_words.c 
+SRCS = $(addprefix $(SRCS_DIR),$(SRCS_FILES)) 
 
-OBJ = $(SRC:.c=.o)
+OBJS = $(SRCS:.c=.o)
+DEPS = ./includes/
 
-#Executable file name
-TARGET=rush-02
 
-#Rule to build the executable
-all : $(TARGET)
+NAME = rush-02
 
-$(TARGET):
-	$(CC) $(CFLAGS) -o $(TARGET) $(SRC)
+CC = gcc
 
-#Rule to clean everything including the executable
-fclean :
-	rm -f $(TARGET) *.h.gcw $(OBJ)
+FLAGS = -Wall -Wextra -Werror
 
-#Rule to rebuild the project
-re : fclean all
+all: $(NAME)
 
-.PHONY : fclean all re
+$(NAME): $(OBJS)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME) 
+
+%.o : %.c
+	$(CC) $(FLAGS) -c $< -o $@ -I$(DEPS) 
+
+clean:
+	rm -f $(OBJS)
+	
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: re fclean clean all
