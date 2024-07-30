@@ -89,7 +89,8 @@ int	parse_string(char *dictionary_string, char ****dict)
 		return (0);
 	}
 	count = count_dictionary_entries(dictionary_string) + 1;
-	*dict = malloc(sizeof(char **) * count);
+	*dict = malloc(sizeof(char **) * (count + 1));
 	populate(dictionary_string, *dict);
+	(*dict)[count]= 0;
 	return (1);
 }

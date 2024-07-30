@@ -7,7 +7,7 @@ int	lookup(char *str)
 	int	i;
 
 	i = 0;
-	while (g_numbers[i][0])
+	while (g_numbers[i])
 	{
 		if (ft_strcmp(g_numbers[i][0], str) == 0)
 			return (i);

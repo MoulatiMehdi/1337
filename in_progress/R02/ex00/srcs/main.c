@@ -5,32 +5,36 @@ char	***g_numbers;
 
 int	main(int argc, char *argv[])
 {
-	char	*input_number;
-	char	*dictionary_string;
+	char *dict_name;
+	char	*input;
+	char	*dict_str;
 	char	***dict;
 	char	buffer[2048];
 
 	buffer[0] = '\0';
+	dict_name = "default.dict";
 
-	input_number = parse_number(argv[argc - 1]);
-	if (input_number == NULL)
+	input = parse_number(argv[argc - 1]);
+	if (input == NULL)
 	{
-		print_error("Error");
+		print_error("Error\n");
 		return (1);
 	}
 	if (argc == 3)
-		dictionary_string = read_dict(argv[1]);
-	else if (argc == 2)
-		dictionary_string = read_dict("default.dict");
-	if (dictionary_string == NULL)
+		dict_name = argv[1];
+	dict_str = read_dict(dict_name);
+	if (dict_str == NULL || !parse_string(dict_str, &dict))
+	{
+		print_error("Dict Error\n");
 		return (1);
-	if (!parse_string(dictionary_string, &dict))
-		return (1);
+	}
 	g_numbers = dict;
-	if (input_number[0] != '0')
-		convert_to_words(ft_strlen(input_number), input_number, buffer);
+	if (input[0] != '0')
+	{
+		if(convert_to_words(input, buffer))
+			printf("%s\n", buffer);
+	}
 	else
 		print_zero();
-	printf("%s\n", buffer);
 	return (0);
 }

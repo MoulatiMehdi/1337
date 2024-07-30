@@ -4,6 +4,7 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
 
 int lookup(char *str);
 void populate(char *str, char ***dict);
@@ -16,7 +17,7 @@ int parse_string(char *dictionary_string, char ****dict);
 int num_to_words(char *numStr, char *buffer);
 int convert_hundred(char *numStr, char *buffer);
 int convert_ten_unit(char *numStr, char *buffer);
-int convert_to_words(int length, char *number, char *buffer);
+int convert_to_words(char *number, char *buffer);
 
 // print 
 
