@@ -5,7 +5,7 @@ int read_file(char *filename)
 {
 	int fd;
 	int bytes;
-	char buffer[1024];
+	unsigned char buffer[1024];
 
 	fd = open(filename,O_RDONLY);
 	if(fd < 0)
