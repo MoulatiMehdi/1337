@@ -6,7 +6,7 @@
 /*   By: mmoulati <mmoulati@1337.ma>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 21:31:58 by mmoulati          #+#    #+#             */
-/*   Updated: 2024/08/22 13:51:59 by mmoulati         ###   ########.fr       */
+/*   Updated: 2024/08/23 14:28:07 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,8 @@
 #include <string.h>
 #include <unistd.h>
 
-void	ft_putstr(char *str, int stream)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	write(stream, str, i);
-	return ;
-}
-
-void	error(char *filename)
-{
-	ft_putstr("./ft_cat: ", 2);
-	ft_putstr(filename, 2);
-	ft_putstr(": ", 2);
-	ft_putstr(strerror(errno), 2);
-	ft_putstr("\n", 2);
-}
+void	ft_putstr(char *str, int stream);
+void	error(char *filename);
 
 int	read_file(char *filename)
 {
@@ -69,4 +52,24 @@ int	main(int argc, char **argv)
 		read_file(argv[i]);
 		i++;
 	}
+}
+
+void	ft_putstr(char *str, int stream)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	write(stream, str, i);
+	return ;
+}
+
+void	error(char *filename)
+{
+	ft_putstr("./ft_cat: ", 2);
+	ft_putstr(filename, 2);
+	ft_putstr(": ", 2);
+	ft_putstr(strerror(errno), 2);
+	ft_putstr("\n", 2);
 }
