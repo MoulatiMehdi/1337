@@ -1,83 +1,72 @@
-#include <fcntl.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_cat.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmoulati <mmoulati@1337.ma>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/21 21:31:58 by mmoulati          #+#    #+#             */
+/*   Updated: 2024/08/22 13:51:59 by mmoulati         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <errno.h>
+#include <fcntl.h>
+#include <string.h>
 #include <unistd.h>
 
-#define FUNTION_NAME "./ft_cat: "
-#define ERR_DIR "Is a directory\n"
-#define ERR_NOT_FOUND "No such file or directory\n"
-
-
-int is_dir(char *filename)
+void	ft_putstr(char *str, int stream)
 {
-	int fd;
-
-	fd = open(filename,O_RDONLY | O_DIRECTORY);
-	if(fd == -1)
-	{
-		if(errno == ENOTDIR)
-			return 0;
-		else
-			return -1;
-	}
-	close(fd);
-	return 1;
-
-}
-
-void ft_putstr(char * str)
-{
-	int i;
+	int	i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 		i++;
-
-	write(1,str,i);
+	write(stream, str, i);
 	return ;
 }
 
-int error(char *msg,char*filename)
+void	error(char *filename)
 {
-	ft_putstr(FUNCTION_NAME);
-	ft_putstr(msg);
-	ft_putstr(": ");
-	ft_putstr(filename);
-	ft_putstr("\n");
+	ft_putstr("./ft_cat: ", 2);
+	ft_putstr(filename, 2);
+	ft_putstr(": ", 2);
+	ft_putstr(strerror(errno), 2);
+	ft_putstr("\n", 2);
 }
 
-int read_file(char *filename)
+int	read_file(char *filename)
 {
-	int fd;
-	int bytes;
-	char buffer[30];
+	int		fd;
+	int		bytes;
+	char	buffer[30];
 
-	fd = open(filename,O_RDONLY);
-	if(fd < 0)
-		return -1;
-
-	bytes = 1 ; 
-	while(bytes > 0)
+	fd = open(filename, O_RDONLY);
+	if (fd < 0)
 	{
-		bytes = read(fd,buffer,1024);
-		write(1,buffer,bytes);
+		error(filename);
+		return (-1);
+	}
+	bytes = 1;
+	while (bytes > 0)
+	{
+		bytes = read(fd, buffer, 30);
+		write(1, buffer, bytes);
 	}
 	close(fd);
-	return 0;
+	return (0);
 }
 
-int main(int argc,char ** argv)
+int	main(int argc, char **argv)
 {
-	int i;
+	int	i;
 
-	if(argc <= 1)
-		return 0;
-	i = 0;
-	while(i < argc)
+	if (argc <= 1)
+		return (0);
+	i = 1;
+	while (i < argc)
 	{
-		if(is_dir(argv[i]) == 1)
-			error(argv[i],ERR_DIR);
-		else if(read_file(filename) < 0)
-			error(argv[i],FILE_NOT_FOUND);
+		read_file(argv[i]);
 		i++;
 	}
 }
