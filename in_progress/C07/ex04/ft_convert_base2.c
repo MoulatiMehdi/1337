@@ -75,4 +75,3 @@ int	ft_helpers(long *big, long *tmp, int radix)
 	}
 	return (len);
 }
-

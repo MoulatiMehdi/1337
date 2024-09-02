@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   num_to_words.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mehdi <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/02 20:55:20 by mehdi             #+#    #+#             */
+/*   Updated: 2024/09/02 20:55:21 by mehdi            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft.h"
 
 extern char	***g_numbers;
@@ -54,7 +66,7 @@ int	num_to_words(char *numStr, char *buffer)
 		if (handle_tens(&numStr, buffer) < 0)
 			return (-1);
 	}
-	if (numStr[0]!= '1' && handle_digit(numStr[1], buffer) < 0)
+	if (numStr[0] != '1' && handle_digit(numStr[1], buffer) < 0)
 		return (-1);
 	return (0);
 }

@@ -52,7 +52,6 @@ void	str_to_hex(char *str, char sep)
 
 	i = 1;
 	ctoh(str[0]);
-
 	while (str[i])
 	{
 		ft_putchar(sep);

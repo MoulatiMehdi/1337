@@ -6,7 +6,7 @@
 /*   By: mmoulati <mmoulati@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 20:18:18 by mmoulati          #+#    #+#             */
-/*   Updated: 2024/07/12 20:18:27 by mmoulati         ###   ########.fr       */
+/*   Updated: 2024/09/02 20:50:08 by mehdi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ char	*ft_strndup(char *src, int n)
 	p[size] = '\0';
 	return (p);
 }
-
 
 int	ft_count_word(char *str, char *charset)
 {

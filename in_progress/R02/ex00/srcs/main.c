@@ -1,11 +1,23 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mehdi <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/02 20:55:42 by mehdi             #+#    #+#             */
+/*   Updated: 2024/09/02 21:22:27 by mehdi            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft.h"
+#include <stdio.h>
 
 char	***g_numbers;
 
 int	main(int argc, char *argv[])
 {
-	char *dict_name;
+	char	*dict_name;
 	char	*input;
 	char	*dict_str;
 	char	***dict;
@@ -13,28 +25,18 @@ int	main(int argc, char *argv[])
 
 	buffer[0] = '\0';
 	dict_name = "default.dict";
-
 	input = parse_number(argv[argc - 1]);
 	if (input == NULL)
-	{
-		print_error("Error\n");
-		return (1);
-	}
+		return (print_error("Error\n"));
 	if (argc == 3)
 		dict_name = argv[1];
 	dict_str = read_dict(dict_name);
 	if (dict_str == NULL || !parse_string(dict_str, &dict))
-	{
-		print_error("Dict Error\n");
-		return (1);
-	}
+		return (print_error("Dict Error\n"));
 	g_numbers = dict;
-	if (input[0] != '0')
-	{
-		if(convert_to_words(input, buffer))
-			printf("%s\n", buffer);
-	}
-	else
+	if (input[0] == '0')
 		print_zero();
+	else if (convert_to_words(input, buffer))
+		printf("%s\n", buffer);
 	return (0);
 }

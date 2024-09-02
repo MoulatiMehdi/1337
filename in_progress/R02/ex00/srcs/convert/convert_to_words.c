@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   convert_to_words.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mehdi <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/02 21:14:06 by mehdi             #+#    #+#             */
+/*   Updated: 2024/09/02 21:14:16 by mehdi            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft.h"
 
 extern char	***g_numbers;
@@ -65,7 +77,7 @@ void	add_magnitude_word(int length, char *buffer)
 	int		order_index;
 	char	*order_in_words;
 
-	if(length <= 3)
+	if (length <= 3)
 		return ;
 	order_of_magnitude = magnitude(length);
 	order_index = lookup(order_of_magnitude);
@@ -78,32 +90,29 @@ void	add_magnitude_word(int length, char *buffer)
 	ft_strcat(buffer, " ");
 }
 
-
-int	convert_to_words( char *number, char *buffer)
+int	convert_to_words(char *number, char *buffer)
 {
-	int len;
+	int		len;
 	int		span;
 	int		index;
-	char	digits[4] ;
+	char	digits[4];
 
-	len = ft_strlen(number); 
+	len = ft_strlen(number);
 	digits[3] = 0;
-	span = len- ((len- 1) / 3) * 3;
+	span = len - ((len - 1) / 3) * 3;
 	index = 0;
-	while (len> 0)
+	while (len > 0)
 	{
 		if (!process_order_of_magnitude(len))
 			return (0);
 		set_digits(span, number, index, digits);
 		num_to_words(digits, buffer);
-		if(digits[0] != '0' || digits[1]!= '0' || digits[2] !='0')
+		if (digits[0] != '0' || digits[1] != '0' || digits[2] != '0')
 			add_magnitude_word(len, buffer);
 		index += span;
-		len-= span;
+		len -= span;
 		if (span != 3)
 			span = 3;
 	}
 	return (1);
 }
-
-

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   three_digits_converter.c                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mehdi <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/02 20:55:24 by mehdi             #+#    #+#             */
+/*   Updated: 2024/09/02 20:55:26 by mehdi            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft.h"
 
 extern char	***g_numbers;
@@ -17,7 +29,7 @@ int	convert_hundred(char *numStr, char *buffer)
 	ft_strcat(buffer, g_numbers[idx_dig][1]);
 	ft_strcat(buffer, " ");
 	ft_strcat(buffer, g_numbers[idx_suff][1]);
-	if(numStr[1] != '0' || numStr[2] != '0')
+	if (numStr[1] != '0' || numStr[2] != '0')
 		ft_strcat(buffer, " and ");
 	return (0);
 }

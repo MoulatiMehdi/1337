@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mehdi <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/02 20:55:33 by mehdi             #+#    #+#             */
+/*   Updated: 2024/09/02 20:55:34 by mehdi            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft.h"
 
 extern char	***g_numbers;
@@ -91,6 +103,6 @@ int	parse_string(char *dictionary_string, char ****dict)
 	count = count_dictionary_entries(dictionary_string) + 1;
 	*dict = malloc(sizeof(char **) * (count + 1));
 	populate(dictionary_string, *dict);
-	(*dict)[count]= 0;
+	(*dict)[count] = 0;
 	return (1);
 }

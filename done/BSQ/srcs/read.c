@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   file.c                                             :+:      :+:    :+:   */
+/*   read.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoulati <mmoulati@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,13 +12,13 @@
 
 #include "ft.h"
 
-char *get_text(int fd)
+char	*get_text(int fd)
 {
-	char tmp_buff[BUFF_SIZE];
-	int bytes;
-	char *buffer;
-	int len;
-	int j;
+	char	tmp_buff[BUFF_SIZE];
+	int		bytes;
+	char	*buffer;
+	int		len;
+	int		j;
 
 	j = 0;
 	len = 0;
@@ -27,7 +27,7 @@ char *get_text(int fd)
 	{
 		bytes = read(fd, tmp_buff, BUFF_SIZE);
 		if (bytes < 1)
-			break;
+			break ;
 		buffer = ft_realloc(buffer, sizeof(char) * (len + bytes + 1));
 		j = 0;
 		while (j < bytes)
@@ -38,13 +38,13 @@ char *get_text(int fd)
 		len += bytes;
 	}
 	buffer[len] = '\0';
-	return buffer;
+	return (buffer);
 }
 
-char *read_file(char *filename)
+char	*read_file(char *filename)
 {
-	int fd;
-	char *str;
+	int		fd;
+	char	*str;
 
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
@@ -54,7 +54,7 @@ char *read_file(char *filename)
 	return (str);
 }
 
-char *read_input()
+char	*read_input(void)
 {
-	return get_text(0);
+	return (get_text(0));
 }

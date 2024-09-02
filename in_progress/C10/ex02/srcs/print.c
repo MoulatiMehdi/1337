@@ -12,7 +12,7 @@
 
 #include "../includes/ft.h"
 
-void	print_name(char*filename)
+void	print_name(char *filename)
 {
 	ft_putstr(L_ARROW);
 	ft_putstr(filename);
