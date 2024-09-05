@@ -1,0 +1,75 @@
+#!/bin/bash
+
+# Run the make command with bear and redirect all output to /dev/null
+bear -- make re &> /dev/null
+
+tests=("t1 t2" "-C t1 t2" "-C -C t1 t2" )
+
+compare_characters() {
+ local output1="$1"
+    local output2="$2"
+
+        res1=""
+        res2=""
+    local IFS=$'\n'  # Set IFS to newline to read line by line
+    local lines1=("$output1")
+    local lines2=("$output2")
+
+    # Get the maximum number of lines between both outputs
+    local maxlines=$(( ${#lines1[@]} > ${#lines2[@]} ? ${#lines1[@]} : ${#lines2[@]} ))
+
+    for (( i=0; i<maxlines; i++ )); do
+        line1="${lines1[i]}"
+        line2="${lines2[i]}"
+
+        # Replace spaces with visible character '␣'
+        line1="${line1// /␣}"
+        line2="${line2// /␣}"
+
+        # Replace empty lines with a placeholder (if needed)
+        [ -z "$line1" ] && line1="(empty)"
+        [ -z "$line2" ] && line2="(empty)"
+
+        local len1=${#line1}
+        local len2=${#line2}
+        local maxlen=$(( len1 > len2 ? len1 : len2 ))
+
+
+        # Loop through the maximum length of the two lines
+        for (( j=0; j<maxlen; j++ )); do
+            char1="${line1:j:1}"
+            char2="${line2:j:1}"
+
+            if [ "$char1" = "$char2" ]; then
+                # Same character, print in white
+                res1+="\e[37m$char1"
+                res2+="\e[37m$char2"
+            else
+                # Different characters, colorize accordingly
+                [ -n "$char1" ] && res1+="\e[31m$char1" || res1+="\e[31m "  # Red for line1
+                [ -n "$char2" ] && res2+="\e[32m$char2" || res2+="\e[32m "  # Green for line2
+            fi
+        done
+    done
+    labels=(
+        "\thexdump :" "\t--------" "$res1\n" "\e[0m\n"  
+        "\t./ft_hexdump :" "\t-------------" "$res2\n" "\e[0m\n"  
+    )
+
+    for elem in "${labels[@]}"; do    
+        echo -e "$elem"
+    done
+}
+
+
+
+
+for test in "${tests[@]}" ; do
+
+    echo "-------------------------------------------------------"
+    output1=$(hexdump $test)   
+    output2=$(./ft_hexdump $test)
+
+    compare_characters "$output1" "$output2"
+done
+
