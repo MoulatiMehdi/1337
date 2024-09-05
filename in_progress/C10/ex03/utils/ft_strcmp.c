@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read.c                                             :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mehdi <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: mmoulati <mmoulati@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/02 14:30:01 by mehdi             #+#    #+#             */
-/*   Updated: 2024/09/02 14:30:05 by mehdi            ###   ########.fr       */
+/*   Created: 2024/07/06 13:10:01 by mmoulati          #+#    #+#             */
+/*   Updated: 2024/07/06 20:08:16 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	read_files(char *files, int repeat)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (files[i])
-	{
-	}
-	return (0);
-}
-
-void	read_input(int repeat)
-{
+	while (s1[i] == s2[i] && s1[i])
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }

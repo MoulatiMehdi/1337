@@ -6,21 +6,36 @@
 /*   By: mehdi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 19:25:44 by mehdi             #+#    #+#             */
-/*   Updated: 2024/09/02 14:26:19 by mehdi            ###   ########.fr       */
+/*   Updated: 2024/09/05 14:46:40 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <errno.h>
+#include <fcntl.h>
 #include <stdlib.h>
+#include <string.h>
 #include <unistd.h>
 
-int		count_option(char **argv, int argc, char *str);
+#define FUNC_NAME "ft_hexdump"
+
 char	**get_files(char **argv, int argc);
+char	*ft_strcpy(char *dest, char *src);
 
+int		ft_errno(char *filename);
+int		close_file(int fd, char *filename);
+int		open_file(char *filename, int oflag);
+int		read_file(int fd, char *buffer, int buff_size, char *filename);
+int		count_option(char **argv, int argc, char *str);
 int		ft_strcmp(char *str1, char *str2);
-void	ft_putstr(char *str);
-void	read_input(int repeat);
-void	read_file(char **files, int repeat);
+int		is_printed(char *buffer, char *prev_buff, int *is_exit);
 
-void	ctoh(unsigned char c);
+void	ft_putchar(unsigned char c);
+void	ft_putstr(char *str);
 void	str_to_hex(char *str, char sep);
-void	int_to_hex(int addr);
+void	int_to_hex(unsigned int addr, int bytes);
+void	ctoh(unsigned char c);
+void	sanitize(char *str);
+void	read_input(char *buffer, int repeat);
+void	ft_hexdump(char **files, char *buffer, int repeat);
+void	print_canonical(char *str, int addr, int repeat);
+void	print_rest(char *buffer, int count, int repeat);

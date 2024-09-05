@@ -6,11 +6,11 @@
 /*   By: mehdi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 20:20:33 by mehdi             #+#    #+#             */
-/*   Updated: 2024/08/29 20:22:04 by mehdi            ###   ########.fr       */
+/*   Updated: 2024/09/03 01:32:19 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft.h"
+#include "ft.h"
 
 int	count_files(char **argv, int argc)
 {
@@ -44,9 +44,7 @@ char	**get_files(char **argv, int argc)
 	j = 0;
 	while (i < argc)
 	{
-		if (argv[i][0] == '-')
-			i++;
-		else
+		if (argv[i][0] != '-')
 			files[j++] = argv[i];
 		i++;
 	}
@@ -59,6 +57,7 @@ int	count_option(char **argv, int argc, char *str)
 	int	i;
 
 	i = 1;
+	count = 0;
 	while (i < argc)
 	{
 		if (ft_strcmp(argv[i], str) == 0)

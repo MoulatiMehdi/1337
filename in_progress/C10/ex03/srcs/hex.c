@@ -6,20 +6,12 @@
 /*   By: mehdi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 19:23:08 by mehdi             #+#    #+#             */
-/*   Updated: 2024/08/29 20:02:10 by mehdi            ###   ########.fr       */
+/*   Updated: 2024/09/03 22:42:45 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../includes/ft.h"
+#include "ft.h"
 
 #define HEX "0123456789abcdef"
-
-/*
- * Print a character to the standard output
- */
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
 
 /*
  * Print the hexadecimal convertion of the character
@@ -33,14 +25,19 @@ void	ctoh(unsigned char c)
 /*
  * Print the hexadecimal convertion of the integer
  */
-void	int_to_hex(int addr)
+void	int_to_hex(unsigned int addr, int bytes)
 {
 	int	power;
 
-	power = 16777216;
+	power = 1;
+	while (bytes - 1 > 0)
+	{
+		power *= 16;
+		bytes--;
+	}
 	while (power > 0)
 	{
-		ft_putchar(HEX[addr / 16]);
+		ft_putchar(HEX[addr / power]);
 		addr %= power;
 		power /= 16;
 	}
@@ -55,13 +52,35 @@ void	str_to_hex(char *str, char sep)
 	while (str[i])
 	{
 		ft_putchar(sep);
+		if (i % 8 == 0)
+			ft_putchar(sep);
 		ctoh(str[i]);
 		i++;
 	}
 	while (i < 16)
 	{
 		ft_putchar(sep);
+		if (i % 8 == 0)
+			ft_putchar(sep);
 		ft_putstr("  ");
 		i++;
 	}
+}
+
+void	sanitize(char *str)
+{
+	int		i;
+	char	c;
+
+	i = 0;
+	ft_putchar('|');
+	while (str[i])
+	{
+		c = str[i];
+		if (c < ' ' || c > 126)
+			c = '.';
+		ft_putchar(c);
+		i++;
+	}
+	ft_putchar('|');
 }
