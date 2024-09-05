@@ -22,11 +22,13 @@ void	*ft_realloc(void *mem, int size)
 	if (!new_mem)
 		return (0);
 	if (mem)
+	{
 		while (i < size)
 		{
 			((char *)new_mem)[i] = ((char *)mem)[i];
 			i++;
 		}
+	}
 	free(mem);
 	return (new_mem);
 }
