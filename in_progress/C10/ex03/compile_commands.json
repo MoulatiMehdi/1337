@@ -1,0 +1,200 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-fsanitize=address",
+      "-c",
+      "-I./includes/",
+      "-o",
+      "srcs/args.o",
+      "srcs/args.c"
+    ],
+    "directory": "/home/mehdi/github/1337/in_progress/C10/ex03",
+    "file": "/home/mehdi/github/1337/in_progress/C10/ex03/srcs/args.c",
+    "output": "/home/mehdi/github/1337/in_progress/C10/ex03/srcs/args.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-fsanitize=address",
+      "-c",
+      "-I./includes/",
+      "-o",
+      "srcs/error.o",
+      "srcs/error.c"
+    ],
+    "directory": "/home/mehdi/github/1337/in_progress/C10/ex03",
+    "file": "/home/mehdi/github/1337/in_progress/C10/ex03/srcs/error.c",
+    "output": "/home/mehdi/github/1337/in_progress/C10/ex03/srcs/error.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-fsanitize=address",
+      "-c",
+      "-I./includes/",
+      "-o",
+      "srcs/file.o",
+      "srcs/file.c"
+    ],
+    "directory": "/home/mehdi/github/1337/in_progress/C10/ex03",
+    "file": "/home/mehdi/github/1337/in_progress/C10/ex03/srcs/file.c",
+    "output": "/home/mehdi/github/1337/in_progress/C10/ex03/srcs/file.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-fsanitize=address",
+      "-c",
+      "-I./includes/",
+      "-o",
+      "srcs/ft_hexdump.o",
+      "srcs/ft_hexdump.c"
+    ],
+    "directory": "/home/mehdi/github/1337/in_progress/C10/ex03",
+    "file": "/home/mehdi/github/1337/in_progress/C10/ex03/srcs/ft_hexdump.c",
+    "output": "/home/mehdi/github/1337/in_progress/C10/ex03/srcs/ft_hexdump.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-fsanitize=address",
+      "-c",
+      "-I./includes/",
+      "-o",
+      "srcs/hex.o",
+      "srcs/hex.c"
+    ],
+    "directory": "/home/mehdi/github/1337/in_progress/C10/ex03",
+    "file": "/home/mehdi/github/1337/in_progress/C10/ex03/srcs/hex.c",
+    "output": "/home/mehdi/github/1337/in_progress/C10/ex03/srcs/hex.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-fsanitize=address",
+      "-c",
+      "-I./includes/",
+      "-o",
+      "srcs/main.o",
+      "srcs/main.c"
+    ],
+    "directory": "/home/mehdi/github/1337/in_progress/C10/ex03",
+    "file": "/home/mehdi/github/1337/in_progress/C10/ex03/srcs/main.c",
+    "output": "/home/mehdi/github/1337/in_progress/C10/ex03/srcs/main.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-fsanitize=address",
+      "-c",
+      "-I./includes/",
+      "-o",
+      "srcs/print.o",
+      "srcs/print.c"
+    ],
+    "directory": "/home/mehdi/github/1337/in_progress/C10/ex03",
+    "file": "/home/mehdi/github/1337/in_progress/C10/ex03/srcs/print.c",
+    "output": "/home/mehdi/github/1337/in_progress/C10/ex03/srcs/print.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-fsanitize=address",
+      "-c",
+      "-I./includes/",
+      "-o",
+      "utils/ft_putchar.o",
+      "utils/ft_putchar.c"
+    ],
+    "directory": "/home/mehdi/github/1337/in_progress/C10/ex03",
+    "file": "/home/mehdi/github/1337/in_progress/C10/ex03/utils/ft_putchar.c",
+    "output": "/home/mehdi/github/1337/in_progress/C10/ex03/utils/ft_putchar.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-fsanitize=address",
+      "-c",
+      "-I./includes/",
+      "-o",
+      "utils/ft_putstr.o",
+      "utils/ft_putstr.c"
+    ],
+    "directory": "/home/mehdi/github/1337/in_progress/C10/ex03",
+    "file": "/home/mehdi/github/1337/in_progress/C10/ex03/utils/ft_putstr.c",
+    "output": "/home/mehdi/github/1337/in_progress/C10/ex03/utils/ft_putstr.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-fsanitize=address",
+      "-c",
+      "-I./includes/",
+      "-o",
+      "utils/ft_strcmp.o",
+      "utils/ft_strcmp.c"
+    ],
+    "directory": "/home/mehdi/github/1337/in_progress/C10/ex03",
+    "file": "/home/mehdi/github/1337/in_progress/C10/ex03/utils/ft_strcmp.c",
+    "output": "/home/mehdi/github/1337/in_progress/C10/ex03/utils/ft_strcmp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-fsanitize=address",
+      "-c",
+      "-I./includes/",
+      "-o",
+      "utils/ft_strcpy.o",
+      "utils/ft_strcpy.c"
+    ],
+    "directory": "/home/mehdi/github/1337/in_progress/C10/ex03",
+    "file": "/home/mehdi/github/1337/in_progress/C10/ex03/utils/ft_strcpy.c",
+    "output": "/home/mehdi/github/1337/in_progress/C10/ex03/utils/ft_strcpy.o"
+  }
+]
