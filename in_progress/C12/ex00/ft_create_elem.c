@@ -6,11 +6,12 @@
 /*   By: mmoulati <mmoulati@1337.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 21:28:54 by mmoulati          #+#    #+#             */
-/*   Updated: 2024/09/07 16:18:38 by mmoulati         ###   ########.fr       */
+/*   Updated: 2024/09/07 19:26:22 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
+#include <stdlib.h>
 
 t_list	*ft_create_elem(void *data)
 {
