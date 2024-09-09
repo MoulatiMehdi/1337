@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_create_elem.c                                   :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoulati <mmoulati@1337.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/05 21:28:54 by mmoulati          #+#    #+#             */
-/*   Updated: 2024/09/08 20:11:16 by mmoulati         ###   ########.fr       */
+/*   Created: 2024/09/07 19:24:43 by mmoulati          #+#    #+#             */
+/*   Updated: 2024/09/07 19:27:10 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
-#include <stdlib.h>
+#ifndef FT_LIST_H
+#define FT_LIST_H
 
-t_list	*ft_create_elem(void *data)
+typedef struct s_list
 {
-	t_list	*new_elem;
+	struct s_list	*next;
+	void			*data;
+}					t_list;
 
-	new_elem = malloc(sizeof(t_list));
-	if (!new_elem)
-		return (0);
-	new_elem->data = data;
-	new_elem->next = 0;
-	return (new_elem);
-}
+t_list				*ft_create_elem(void *data);
+
+/*
+ * NOTE : should be removed from the header
+ **/
+int					ft_list_size(t_list *begin_list);
+t_list	*ft_list_at(t_list *begin_list, unsigned int nbr);
+
+#endif
