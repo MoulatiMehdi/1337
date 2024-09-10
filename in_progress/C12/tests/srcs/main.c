@@ -12,10 +12,12 @@
 
 void	test_push_front(void);
 void	test_create_elem(void);
+void	test_push_back(void);
 
 int	main(void)
 {
 	test_create_elem();
 	test_push_front();
+	test_push_back();
 	return (0);
 }

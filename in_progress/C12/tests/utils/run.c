@@ -1,6 +1,6 @@
 #include "../includes/utils.h"
 
-void	run_test(char *func_name, void *tests, t_response (*f)(void *), int size,
+void	run_test(char *func_name, void *tests, t_response (*f)(), int size,
 		unsigned long elem_size)
 {
 	int			i;

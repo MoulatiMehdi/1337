@@ -14,3 +14,21 @@ char	*to_string(char *buffer, t_list *p)
 		values_to_string(buffer, p->data, p->next);
 	return (buffer);
 }
+
+void	ft_list_tostring(char *buffer, t_list **head)
+{
+	t_list	*p;
+
+	buffer[0] = '\0';
+	if (head && *head)
+	{
+		p = *head;
+		while (p)
+		{
+			strcat(buffer, p->data);
+			strcat(buffer, " -> ");
+			p = p->next;
+		}
+	}
+	strcat(buffer, "Null");
+}
