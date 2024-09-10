@@ -10,12 +10,12 @@
       "-I./includes/",
       "-I../",
       "-o",
-      "main.o",
-      "main.c"
+      "srcs/main.o",
+      "srcs/main.c"
     ],
     "directory": "/home/mehdi/github/1337_new/in_progress/C12/tests",
-    "file": "/home/mehdi/github/1337_new/in_progress/C12/tests/main.c",
-    "output": "/home/mehdi/github/1337_new/in_progress/C12/tests/main.o"
+    "file": "/home/mehdi/github/1337_new/in_progress/C12/tests/srcs/main.c",
+    "output": "/home/mehdi/github/1337_new/in_progress/C12/tests/srcs/main.o"
   },
   {
     "arguments": [
@@ -28,12 +28,48 @@
       "-I./includes/",
       "-I../",
       "-o",
-      "test_create_elem.o",
-      "test_create_elem.c"
+      "srcs/test_create_elem.o",
+      "srcs/test_create_elem.c"
     ],
     "directory": "/home/mehdi/github/1337_new/in_progress/C12/tests",
-    "file": "/home/mehdi/github/1337_new/in_progress/C12/tests/test_create_elem.c",
-    "output": "/home/mehdi/github/1337_new/in_progress/C12/tests/test_create_elem.o"
+    "file": "/home/mehdi/github/1337_new/in_progress/C12/tests/srcs/test_create_elem.c",
+    "output": "/home/mehdi/github/1337_new/in_progress/C12/tests/srcs/test_create_elem.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-fsanitize=address",
+      "-g",
+      "-c",
+      "-I./includes/",
+      "-I../",
+      "-o",
+      "srcs/test_push_front.o",
+      "srcs/test_push_front.c"
+    ],
+    "directory": "/home/mehdi/github/1337_new/in_progress/C12/tests",
+    "file": "/home/mehdi/github/1337_new/in_progress/C12/tests/srcs/test_push_front.c",
+    "output": "/home/mehdi/github/1337_new/in_progress/C12/tests/srcs/test_push_front.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-fsanitize=address",
+      "-g",
+      "-c",
+      "-I./includes/",
+      "-I../",
+      "-o",
+      "srcs/to_string.o",
+      "srcs/to_string.c"
+    ],
+    "directory": "/home/mehdi/github/1337_new/in_progress/C12/tests",
+    "file": "/home/mehdi/github/1337_new/in_progress/C12/tests/srcs/to_string.c",
+    "output": "/home/mehdi/github/1337_new/in_progress/C12/tests/srcs/to_string.o"
   },
   {
     "arguments": [
