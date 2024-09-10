@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_push_front.c                                  :+:      :+:    :+:   */
+/*   test_push_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmoulati <mmoulati@1337.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 18:19:01 by mmoulati          #+#    #+#             */
-/*   Updated: 2024/09/10 02:12:53 by mmoulati         ###   ########.fr       */
+/*   Updated: 2024/09/10 02:11:41 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ typedef struct s_request
 
 	char			**list;
 }					t_request;
-void				ft_list_push_front(t_list **begin_list, void *data);
 
+void				ft_list_push_back(t_list **begin_list, void *data);
 static t_response	is_test_passed(t_request *req)
 {
 	t_response	res;
 
 	init_response(&res, req->desc);
-	ft_list_push_front(req->head, req->data);
+	ft_list_push_back(req->head, req->data);
 	ft_list_tostring(res.result, req->head);
 	strcpy(res.expected, req->expected);
 	if (strcmp(res.result, res.expected) == 0)
@@ -42,7 +42,7 @@ static t_response	is_test_passed(t_request *req)
 	return (res);
 }
 
-void	test_push_front(void)
+void	test_push_back(void)
 {
 	int		size;
 	t_list	*p_null;
@@ -58,9 +58,10 @@ void	test_push_front(void)
 								.desc = "Head contains items",
 								.data = "Z",
 								.head = &head,
-								.expected = "Z -> A -> Null",
+								.expected = "A -> Z -> Null",
 							}};
 	size = sizeof(tests) / sizeof(tests[0]);
-	run_test("ft_list_push_front", tests, is_test_passed, size,
+	run_test("ft_list_push_back", tests, is_test_passed, size,
 		sizeof(tests[0]));
+	free(head);
 }
