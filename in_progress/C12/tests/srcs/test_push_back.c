@@ -61,7 +61,7 @@ void	test_push_back(void)
 								.expected = "A -> Z -> Null",
 							}};
 	size = sizeof(tests) / sizeof(tests[0]);
-	run_test("ft_list_push_back", tests, is_test_passed, size,
+	run_test("ex04/ft_list_push_back", tests, is_test_passed, size,
 		sizeof(tests[0]));
 	free(head);
 }

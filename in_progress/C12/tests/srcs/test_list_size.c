@@ -73,6 +73,6 @@ void	test_list_size(void)
 		{.desc = "Three element list",.expected = 3,.datas = case_3}
 	};
 	size = sizeof(tests) / sizeof(tests[0]);
-	run_test("ft_list_size", tests, is_test_passed, size,
+	run_test("ex02/ft_list_size", tests, is_test_passed, size,
 		sizeof(tests[0]));
 }

@@ -61,6 +61,6 @@ void	test_push_front(void)
 								.expected = "Z -> A -> Null",
 							}};
 	size = sizeof(tests) / sizeof(tests[0]);
-	run_test("ft_list_push_front", tests, is_test_passed, size,
+	run_test("ex01/ft_list_push_front", tests, is_test_passed, size,
 		sizeof(tests[0]));
 }

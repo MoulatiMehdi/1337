@@ -6,7 +6,7 @@
 /*   By: mmoulati <mmoulati@1337.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 18:19:01 by mmoulati          #+#    #+#             */
-/*   Updated: 2024/09/10 00:04:05 by mmoulati         ###   ########.fr       */
+/*   Updated: 2024/09/11 14:15:45 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,8 @@ static t_response	is_test_passed(t_request *req)
 	t_list		*p;
 	t_response	res;
 
-	// Initialize res.result and res.expected before usage
-	memset(res.result, 0, sizeof(res.result));
-	memset(res.expected, 0, sizeof(res.expected));
+	init_response(&res,req->desc);
 	p = ft_create_elem(req->data);
-	res.desc = req->desc;
-	res.is_pass = 0;
 	to_string(res.result, p);
 	values_to_string(res.expected, req->data, NULL);
 	if (p && !p->next && p->data == req->data)
@@ -54,5 +50,5 @@ void	test_create_elem(void)
 		{.desc = "Structure Data", .data = tests},
 	};
 	size = sizeof(tests) / sizeof(tests[0]);
-	run_test("ft_create_elem", tests, is_test_passed, size, sizeof(tests[0]));
+	run_test("ex00/ft_create_elem", tests, is_test_passed, size, sizeof(tests[0]));
 }

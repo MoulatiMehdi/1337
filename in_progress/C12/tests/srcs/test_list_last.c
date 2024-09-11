@@ -77,5 +77,5 @@ void	test_list_last(void)
 		{.desc = "Three Element",.datas = case_3}};
 
 	size = sizeof(tests) / sizeof(tests[0]);
-	run_test("ft_list_last", tests, is_test_passed, size, sizeof(tests[0]));
+	run_test("ex03/ft_list_last", tests, is_test_passed, size, sizeof(tests[0]));
 }
