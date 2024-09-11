@@ -1,0 +1,67 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   test_push_back.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmoulati <mmoulati@1337.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/08 18:19:01 by mmoulati          #+#    #+#             */
+/*   Updated: 2024/09/10 02:11:41 by mmoulati         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft.h"
+#include "ft_list.h"
+#include "stdlib.h"
+#include "string.h"
+#include "utils.h"
+
+typedef struct s_request
+{
+	char			*desc;
+	void			*data;
+	char			*expected;
+	t_list			**head;
+
+	char			**list;
+}					t_request;
+
+void				ft_list_push_back(t_list **begin_list, void *data);
+static t_response	is_test_passed(t_request *req)
+{
+	t_response	res;
+
+	init_response(&res, req->desc);
+	ft_list_push_back(req->head, req->data);
+	ft_list_tostring(res.result, req->head);
+	strcpy(res.expected, req->expected);
+	if (strcmp(res.result, res.expected) == 0)
+		res.is_pass = 1;
+	if (req->head && *req->head && (*req->head)->data == req->data)
+		free(*req->head);
+	return (res);
+}
+
+void	test_push_back(void)
+{
+	int		size;
+	t_list	*p_null;
+	t_list	*head;
+
+	p_null = NULL;
+	head = ft_create_elem("A");
+	t_request tests[] = {{.desc = "Head Reference is Null", .data = "Z",
+		.head = NULL, .expected = "Null"},
+							{.desc = "Head Value is Null", .data = "Z",
+								.head = &p_null, .expected = "Z -> Null"},
+							{
+								.desc = "Head contains items",
+								.data = "Z",
+								.head = &head,
+								.expected = "A -> Z -> Null",
+							}};
+	size = sizeof(tests) / sizeof(tests[0]);
+	run_test("ft_list_push_back", tests, is_test_passed, size,
+		sizeof(tests[0]));
+	free(head);
+}
