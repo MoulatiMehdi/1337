@@ -16,6 +16,8 @@ void	test_push_back(void);
 void	test_list_size(void);
 void	test_list_last(void);
 void	test_push_strs(void);
+void	test_list_clear(void);
+void	test_list_at(void);
 
 int	main(void)
 {
@@ -25,5 +27,7 @@ int	main(void)
 	test_list_last();
 	test_push_back();
 	test_push_strs();
+	test_list_clear();
+	test_list_at();
 	return (0);
 }

@@ -20,7 +20,7 @@ typedef struct s_request
 {
 	char			*desc;
 	char			**datas;
-	int				expected;
+	int				fct_free;
 }					t_request;
 
 int					ft_list_size(t_list *begin_list);
@@ -47,7 +47,7 @@ static t_response	is_test_passed(t_request *req)
 	}
 
 	sprintf(res.result, "%d", ft_list_size(head));
-	sprintf(res.expected, "%d", req->expected);
+	sprintf(res.expected, "%d", req->fct_free);
 	if (strcmp(res.expected, res.result) == 0)
 		res.is_pass = 1;
 	while (head)
@@ -67,10 +67,10 @@ void	test_list_size(void)
 	char	*case_3[] = {"A", "B", "C", NULL};
 
 	t_request tests[] = {
-		{.desc = "Empty List", .expected = 0, .datas = NULL},
-		{.desc = "One element List", .expected = 1,.datas = case_1},
-		{.desc = "Two element List", .expected = 2,.datas = case_2},
-		{.desc = "Three element list",.expected = 3,.datas = case_3}
+		{.desc = "Empty List", .fct_free = 0, .datas = NULL},
+		{.desc = "One element List", .fct_free = 1,.datas = case_1},
+		{.desc = "Two element List", .fct_free = 2,.datas = case_2},
+		{.desc = "Three element list",.fct_free = 3,.datas = case_3}
 	};
 	size = sizeof(tests) / sizeof(tests[0]);
 	run_test("ex02/ft_list_size", tests, is_test_passed, size,
