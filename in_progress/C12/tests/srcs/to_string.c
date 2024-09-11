@@ -25,7 +25,7 @@ void	ft_list_tostring(char *buffer, t_list **head)
 		p = *head;
 		while (p)
 		{
-			strcat(buffer, p->data);
+			strcat(buffer, p->data?p->data:"NULL");
 			strcat(buffer, " -> ");
 			p = p->next;
 		}

@@ -6,7 +6,7 @@
 /*   By: mmoulati <mmoulati@1337.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 18:19:01 by mmoulati          #+#    #+#             */
-/*   Updated: 2024/09/10 02:11:41 by mmoulati         ###   ########.fr       */
+/*   Updated: 2024/09/11 14:38:24 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void				ft_list_push_back(t_list **begin_list, void *data);
 static t_response	is_test_passed(t_request *req)
 {
 	t_response	res;
+	t_list *p;
+	t_list *tmp;
 
 	init_response(&res, req->desc);
 	ft_list_push_back(req->head, req->data);
@@ -37,8 +39,16 @@ static t_response	is_test_passed(t_request *req)
 	strcpy(res.expected, req->expected);
 	if (strcmp(res.result, res.expected) == 0)
 		res.is_pass = 1;
-	if (req->head && *req->head && (*req->head)->data == req->data)
-		free(*req->head);
+	p = 0;
+	if (req->head)
+		p = *req->head;
+	if(p) 
+		while(p)
+		{
+			tmp = p->next;
+			free(p);
+			p = tmp;
+		}
 	return (res);
 }
 
@@ -48,20 +58,15 @@ void	test_push_back(void)
 	t_list	*p_null;
 	t_list	*head;
 
+
 	p_null = NULL;
 	head = ft_create_elem("A");
-	t_request tests[] = {{.desc = "Head Reference is Null", .data = "Z",
-		.head = NULL, .expected = "Null"},
-							{.desc = "Head Value is Null", .data = "Z",
-								.head = &p_null, .expected = "Z -> Null"},
-							{
-								.desc = "Head contains items",
-								.data = "Z",
-								.head = &head,
-								.expected = "A -> Z -> Null",
-							}};
+	t_request tests[] = {
+		{.desc = "Head Reference is Null", .data = "Z",.head = NULL, .expected = "Null",},
+		{.desc = "Head Value is Null", .data = "Z", .head = &p_null, .expected = "Z -> Null",},
+		{.desc = "Head contains items",	.data = "Z",.head = &head,.expected = "A -> Z -> Null",}
+	};
 	size = sizeof(tests) / sizeof(tests[0]);
 	run_test("ex04/ft_list_push_back", tests, is_test_passed, size,
 		sizeof(tests[0]));
-	free(head);
 }
