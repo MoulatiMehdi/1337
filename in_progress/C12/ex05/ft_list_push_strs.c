@@ -6,7 +6,7 @@
 /*   By: mmoulati <mmoulati@1337.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 19:45:25 by mmoulati          #+#    #+#             */
-/*   Updated: 2024/09/07 19:45:25 by mmoulati         ###   ########.fr       */
+/*   Updated: 2024/09/11 14:12:59 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_list_push_strs(int size, char **strs)
 	t_list	*new_elem;
 	int		i;
 
-	if (size <= 0 || !strs || !strs[0])
+	if (size <= 0 || !strs)
 		return (0);
 	i = 0;
 	p = 0;
