@@ -6,7 +6,7 @@
 /*   By: mehdi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 18:26:46 by mehdi             #+#    #+#             */
-/*   Updated: 2024/09/11 13:05:18 by mmoulati         ###   ########.fr       */
+/*   Updated: 2024/09/11 18:09:59 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	test_list_last(void);
 void	test_push_strs(void);
 void	test_list_clear(void);
 void	test_list_at(void);
+void	test_list_reverse(void);
 
 int	main(void)
 {
@@ -29,5 +30,6 @@ int	main(void)
 	test_push_strs();
 	test_list_clear();
 	test_list_at();
+	test_list_reverse();
 	return (0);
 }
