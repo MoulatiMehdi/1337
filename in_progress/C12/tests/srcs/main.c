@@ -22,6 +22,7 @@ void	test_list_reverse(void);
 void	test_list_foreach(void);
 void	test_list_foreach_if(void);
 void	test_list_find(void);
+void	test_list_remove_if(void);
 
 int	main(void)
 {
@@ -37,5 +38,6 @@ int	main(void)
 	test_list_foreach();
 	test_list_foreach_if();
 	test_list_find();
+	test_list_remove_if();
 	return (0);
 }

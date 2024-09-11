@@ -6,7 +6,7 @@
 /*   By: mmoulati <mmoulati@1337.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 18:19:01 by mmoulati          #+#    #+#             */
-/*   Updated: 2024/09/11 21:39:25 by mmoulati         ###   ########.fr       */
+/*   Updated: 2024/09/11 23:55:25 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,6 @@ void	test_list_find(void)
 		{.desc = "Four element list", .strs = cases[3], .size=4,.cmp=strcmp,.data_ref="E"},
 	};
 	size = sizeof(tests) / sizeof(tests[0]);
-	run_test("ex10/ft_list_find", tests, is_test_passed, size,
+	run_test("ex11/ft_list_find", tests, is_test_passed, size,
 		sizeof(tests[0]));
 }
