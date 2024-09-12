@@ -6,7 +6,7 @@
 /*   By: mehdi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 18:26:46 by mehdi             #+#    #+#             */
-/*   Updated: 2024/09/11 19:45:50 by mmoulati         ###   ########.fr       */
+/*   Updated: 2024/09/12 13:05:17 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	test_list_foreach_if(void);
 void	test_list_find(void);
 void	test_list_remove_if(void);
 void	test_list_merge(void);
+void	test_list_sort(void);
 
 int	main(void)
 {
@@ -41,5 +42,6 @@ int	main(void)
 	test_list_find();
 	test_list_remove_if();
 	test_list_merge();
+	test_list_sort();
 	return (0);
 }

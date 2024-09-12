@@ -6,7 +6,7 @@
 /*   By: mmoulati <mmoulati@1337.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/08 18:19:01 by mmoulati          #+#    #+#             */
-/*   Updated: 2024/09/12 01:17:28 by mmoulati         ###   ########.fr       */
+/*   Updated: 2024/09/12 12:44:07 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,49 +16,12 @@
 #include "string.h"
 #include "utils.h"
 
-typedef struct s_array
-{
-	char			**strs;
-	int				length;
-}					t_array;
 typedef struct s_request
 {
 	char			*desc;
 	t_array			list1;
 	t_array			list2;
 }					t_request;
-
-t_list	*create_list(t_array arr)
-{
-	int		i;
-	t_list	*tmp;
-	t_list	*head;
-
-	i = arr.length - 1;
-	head = 0;
-	if (arr.strs)
-	{
-		while (i >= 0)
-		{
-			tmp = head;
-			head = ft_create_elem(arr.strs[i]);
-			head->next = tmp;
-			i--;
-		}
-	}
-	return (head);
-}
-void	clear_list(t_list *head)
-{
-	t_list	*tmp;
-
-	while (head)
-	{
-		tmp = head->next;
-		free(head);
-		head = tmp;
-	}
-}
 
 void				ft_list_merge(t_list **begin_list1, t_list *begin_list2);
 static t_response	is_test_passed(t_request *req)
