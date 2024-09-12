@@ -10,6 +10,24 @@
       "-I./includes/",
       "-I../",
       "-o",
+      "srcs/ft_list.o",
+      "srcs/ft_list.c"
+    ],
+    "directory": "/home/mehdi/github/1337/in_progress/C12/tests",
+    "file": "/home/mehdi/github/1337/in_progress/C12/tests/srcs/ft_list.c",
+    "output": "/home/mehdi/github/1337/in_progress/C12/tests/srcs/ft_list.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-fsanitize=address",
+      "-g",
+      "-c",
+      "-I./includes/",
+      "-I../",
+      "-o",
       "srcs/main.o",
       "srcs/main.c"
     ],
@@ -172,6 +190,24 @@
       "-I./includes/",
       "-I../",
       "-o",
+      "srcs/test_list_merge.o",
+      "srcs/test_list_merge.c"
+    ],
+    "directory": "/home/mehdi/github/1337/in_progress/C12/tests",
+    "file": "/home/mehdi/github/1337/in_progress/C12/tests/srcs/test_list_merge.c",
+    "output": "/home/mehdi/github/1337/in_progress/C12/tests/srcs/test_list_merge.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-fsanitize=address",
+      "-g",
+      "-c",
+      "-I./includes/",
+      "-I../",
+      "-o",
       "srcs/test_list_remove_if.o",
       "srcs/test_list_remove_if.c"
     ],
@@ -214,6 +250,24 @@
     "directory": "/home/mehdi/github/1337/in_progress/C12/tests",
     "file": "/home/mehdi/github/1337/in_progress/C12/tests/srcs/test_list_size.c",
     "output": "/home/mehdi/github/1337/in_progress/C12/tests/srcs/test_list_size.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-fsanitize=address",
+      "-g",
+      "-c",
+      "-I./includes/",
+      "-I../",
+      "-o",
+      "srcs/test_list_sort.o",
+      "srcs/test_list_sort.c"
+    ],
+    "directory": "/home/mehdi/github/1337/in_progress/C12/tests",
+    "file": "/home/mehdi/github/1337/in_progress/C12/tests/srcs/test_list_sort.c",
+    "output": "/home/mehdi/github/1337/in_progress/C12/tests/srcs/test_list_sort.o"
   },
   {
     "arguments": [
