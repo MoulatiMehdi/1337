@@ -6,7 +6,7 @@
 /*   By: mmoulati <mmoulati@1337.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 19:44:14 by mmoulati          #+#    #+#             */
-/*   Updated: 2024/09/07 19:44:14 by mmoulati         ###   ########.fr       */
+/*   Updated: 2024/09/12 18:22:36 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void	ft_list_skip(t_list **prev, t_list *curr, t_list **begin_list2,
 {
 	t_list	*tmp;
 
-	while ((*begin_list2)->next && (*cmp)((*begin_list2)->next->data,
+	if (!cmp || !begin_list2 || !*begin_list2)
+		return ;
+	while (curr && (*begin_list2)->next && (*cmp)((*begin_list2)->next->data,
 		curr->data) <= 0)
 		*begin_list2 = (*begin_list2)->next;
 	*prev = *begin_list2;
@@ -32,7 +34,7 @@ void	ft_sorted_list_merge(t_list **begin_list1, t_list *begin_list2,
 	t_list	*curr;
 	t_list	*prev;
 
-	if (!begin_list2)
+	if (!begin_list2 || !cmp)
 		return ;
 	if (!begin_list1 || !*begin_list1)
 	{
@@ -48,7 +50,7 @@ void	ft_sorted_list_merge(t_list **begin_list1, t_list *begin_list2,
 			prev = curr;
 			curr = curr->next;
 		}
-		if (!prev)
+		if (prev)
 			prev->next = begin_list2;
 		else
 			*begin_list1 = begin_list2;
