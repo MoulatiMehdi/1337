@@ -23,6 +23,7 @@ void	test_list_foreach(void);
 void	test_list_foreach_if(void);
 void	test_list_find(void);
 void	test_list_remove_if(void);
+void	test_list_merge(void);
 
 int	main(void)
 {
@@ -39,5 +40,6 @@ int	main(void)
 	test_list_foreach_if();
 	test_list_find();
 	test_list_remove_if();
+	test_list_merge();
 	return (0);
 }
