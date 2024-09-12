@@ -6,7 +6,7 @@
 /*   By: mmoulati <mmoulati@1337.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 19:44:24 by mmoulati          #+#    #+#             */
-/*   Updated: 2024/09/08 00:58:33 by mmoulati         ###   ########.fr       */
+/*   Updated: 2024/09/12 17:30:01 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@ void	ft_sorted_list_insert(t_list **begin_list, void *data, int (*cmp)())
 	t_list	*prev;
 	t_list	*curr;
 
-	new_elem = ft_create_elem(data);
-	if (!new_elem)
+	if (!begin_list)
 		return ;
-	if (!begin_list || !*begin_list)
+	new_elem = ft_create_elem(data);
+	if (!new_elem || !cmp)
+		return ;
+	if (!*begin_list)
 	{
 		*begin_list = new_elem;
 		return ;
