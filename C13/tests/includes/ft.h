@@ -6,21 +6,24 @@
 /*   By: mmoulati <mmoulati@1337.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 20:24:06 by mmoulati          #+#    #+#             */
-/*   Updated: 2024/09/16 00:13:34 by mmoulati         ###   ########.fr       */
+/*   Updated: 2024/09/16 22:16:59 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_H
+
 # define FT_H
+
 # include "ft_btree.h"
 # include "utils.h"
 # include <stdio.h>
 # include <stdlib.h>
+void			print_level(void *item, int current_level, int is_first_elem);
 
 extern char		g_buffer[1024];
 typedef struct s_tree
 {
-	void		*item;
+	char		item[50];
 	int			left;
 	int			right;
 }				t_tree;

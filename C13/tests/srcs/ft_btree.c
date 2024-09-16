@@ -6,7 +6,7 @@
 /*   By: mmoulati <mmoulati@1337.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 20:57:15 by mmoulati          #+#    #+#             */
-/*   Updated: 2024/09/16 01:39:20 by mmoulati         ###   ########.fr       */
+/*   Updated: 2024/09/16 22:27:41 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 #include <stdlib.h>
 
 char	g_buffer[1024] = {0};
-t_tree	g_null = {.item = 0, .left = -2, .right = -2};
+t_tree	g_null = {.item = {0}, .left = -2, .right = -2};
+
 t_btree	*create_tree(t_tree *arr_t)
 {
 	t_btree	**nodes;
@@ -72,4 +73,20 @@ void	print(void *item)
 {
 	strcat(g_buffer, item ? (char *)item : "Null");
 	strcat(g_buffer, "->");
+}
+
+void	print_level(void *item, int current_level, int is_first_elem)
+{
+	char	nbr[20] = {0};
+
+	if (is_first_elem)
+	{
+		if (current_level != 0)
+		{
+			strcat(g_buffer, "\n");
+		}
+		sprintf(nbr, "%d:", current_level);
+		strcat(g_buffer, nbr);
+	}
+	print(item);
 }
