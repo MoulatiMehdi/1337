@@ -1,0 +1,122 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-g",
+      "-fsanitize=address",
+      "-I./",
+      "-o",
+      "test",
+      "./ex00/btree_create_node.c"
+    ],
+    "directory": "/home/mehdi/github/1337/C13",
+    "file": "/home/mehdi/github/1337/C13/ex00/btree_create_node.c",
+    "output": "/home/mehdi/github/1337/C13/test"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-g",
+      "-fsanitize=address",
+      "-I./",
+      "-o",
+      "test",
+      "./ex01/btree_apply_prefix.c"
+    ],
+    "directory": "/home/mehdi/github/1337/C13",
+    "file": "/home/mehdi/github/1337/C13/ex01/btree_apply_prefix.c",
+    "output": "/home/mehdi/github/1337/C13/test"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-g",
+      "-fsanitize=address",
+      "-I./",
+      "-o",
+      "test",
+      "./ex02/btree_apply_infix.c"
+    ],
+    "directory": "/home/mehdi/github/1337/C13",
+    "file": "/home/mehdi/github/1337/C13/ex02/btree_apply_infix.c",
+    "output": "/home/mehdi/github/1337/C13/test"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-g",
+      "-fsanitize=address",
+      "-I./",
+      "-o",
+      "test",
+      "./ex03/btree_apply_suffix.c"
+    ],
+    "directory": "/home/mehdi/github/1337/C13",
+    "file": "/home/mehdi/github/1337/C13/ex03/btree_apply_suffix.c",
+    "output": "/home/mehdi/github/1337/C13/test"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-g",
+      "-fsanitize=address",
+      "-I./",
+      "-o",
+      "test",
+      "./ex04/btree_insert_data.c"
+    ],
+    "directory": "/home/mehdi/github/1337/C13",
+    "file": "/home/mehdi/github/1337/C13/ex04/btree_insert_data.c",
+    "output": "/home/mehdi/github/1337/C13/test"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-g",
+      "-fsanitize=address",
+      "-I./",
+      "-o",
+      "test",
+      "./ex05/btree_search_item.c"
+    ],
+    "directory": "/home/mehdi/github/1337/C13",
+    "file": "/home/mehdi/github/1337/C13/ex05/btree_search_item.c",
+    "output": "/home/mehdi/github/1337/C13/test"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-g",
+      "-fsanitize=address",
+      "-I./",
+      "-o",
+      "test",
+      "./ex06/btree_level_count.c"
+    ],
+    "directory": "/home/mehdi/github/1337/C13",
+    "file": "/home/mehdi/github/1337/C13/ex06/btree_level_count.c",
+    "output": "/home/mehdi/github/1337/C13/test"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-g",
+      "-fsanitize=address",
+      "-I./",
+      "-o",
+      "test",
+      "./ex07/btree_apply_by_level.c"
+    ],
+    "directory": "/home/mehdi/github/1337/C13",
+    "file": "/home/mehdi/github/1337/C13/ex07/btree_apply_by_level.c",
+    "output": "/home/mehdi/github/1337/C13/test"
+  }
+]
