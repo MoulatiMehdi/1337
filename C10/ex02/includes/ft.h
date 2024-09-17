@@ -6,7 +6,7 @@
 /*   By: mehdi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 20:52:51 by mehdi             #+#    #+#             */
-/*   Updated: 2024/09/05 15:04:18 by mmoulati         ###   ########.fr       */
+/*   Updated: 2024/09/18 00:35:59 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # include <unistd.h>
 
 # define BUFF_SIZE 1024
-# define L_ARROW "==>"
-# define R_ARROW "<=="
+# define L_ARROW "==> "
+# define R_ARROW " <=="
 
 void		read_file(char *filename, long long bytes);
 void		read_input(long long bytes);

@@ -6,11 +6,13 @@
 /*   By: mehdi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 18:26:23 by mehdi             #+#    #+#             */
-/*   Updated: 2024/08/28 00:47:58 by mehdi            ###   ########.fr       */
+/*   Updated: 2024/09/18 00:51:55 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft.h"
+
+extern int	g_n_file;
 
 static int	count_files(char **argv, int argc)
 {
@@ -21,7 +23,7 @@ static int	count_files(char **argv, int argc)
 	i = 1;
 	while (i < argc)
 	{
-		if (argv[i][0] == '-')
+		if (argv[i][0] == '-' && argv[i][1] != '\0')
 			i++;
 		else
 			count++;
@@ -82,11 +84,12 @@ char	**get_files(char **argv, int argc)
 	j = 0;
 	while (i < argc)
 	{
-		if (argv[i][0] == '-')
+		if (argv[i][0] == '-' && argv[i][1] != '\0')
 			i++;
 		else
 			files[j++] = argv[i];
 		i++;
 	}
+	g_n_file = j;
 	return (files);
 }

@@ -1,0 +1,155 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-fsanitize=address",
+      "-c",
+      "-o",
+      "srcs/args.o",
+      "srcs/args.c"
+    ],
+    "directory": "/home/mehdi/github/1337/C10/ex02",
+    "file": "/home/mehdi/github/1337/C10/ex02/srcs/args.c",
+    "output": "/home/mehdi/github/1337/C10/ex02/srcs/args.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-fsanitize=address",
+      "-c",
+      "-o",
+      "srcs/error.o",
+      "srcs/error.c"
+    ],
+    "directory": "/home/mehdi/github/1337/C10/ex02",
+    "file": "/home/mehdi/github/1337/C10/ex02/srcs/error.c",
+    "output": "/home/mehdi/github/1337/C10/ex02/srcs/error.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-fsanitize=address",
+      "-c",
+      "-o",
+      "srcs/ft_putstr.o",
+      "srcs/ft_putstr.c"
+    ],
+    "directory": "/home/mehdi/github/1337/C10/ex02",
+    "file": "/home/mehdi/github/1337/C10/ex02/srcs/ft_putstr.c",
+    "output": "/home/mehdi/github/1337/C10/ex02/srcs/ft_putstr.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-fsanitize=address",
+      "-c",
+      "-o",
+      "srcs/ft_strcmp.o",
+      "srcs/ft_strcmp.c"
+    ],
+    "directory": "/home/mehdi/github/1337/C10/ex02",
+    "file": "/home/mehdi/github/1337/C10/ex02/srcs/ft_strcmp.c",
+    "output": "/home/mehdi/github/1337/C10/ex02/srcs/ft_strcmp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-fsanitize=address",
+      "-c",
+      "-o",
+      "srcs/ft_strlen.o",
+      "srcs/ft_strlen.c"
+    ],
+    "directory": "/home/mehdi/github/1337/C10/ex02",
+    "file": "/home/mehdi/github/1337/C10/ex02/srcs/ft_strlen.c",
+    "output": "/home/mehdi/github/1337/C10/ex02/srcs/ft_strlen.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-fsanitize=address",
+      "-c",
+      "-o",
+      "srcs/main.o",
+      "srcs/main.c"
+    ],
+    "directory": "/home/mehdi/github/1337/C10/ex02",
+    "file": "/home/mehdi/github/1337/C10/ex02/srcs/main.c",
+    "output": "/home/mehdi/github/1337/C10/ex02/srcs/main.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-fsanitize=address",
+      "-c",
+      "-o",
+      "srcs/parse.o",
+      "srcs/parse.c"
+    ],
+    "directory": "/home/mehdi/github/1337/C10/ex02",
+    "file": "/home/mehdi/github/1337/C10/ex02/srcs/parse.c",
+    "output": "/home/mehdi/github/1337/C10/ex02/srcs/parse.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-fsanitize=address",
+      "-c",
+      "-o",
+      "srcs/print.o",
+      "srcs/print.c"
+    ],
+    "directory": "/home/mehdi/github/1337/C10/ex02",
+    "file": "/home/mehdi/github/1337/C10/ex02/srcs/print.c",
+    "output": "/home/mehdi/github/1337/C10/ex02/srcs/print.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-fsanitize=address",
+      "-c",
+      "-o",
+      "srcs/read.o",
+      "srcs/read.c"
+    ],
+    "directory": "/home/mehdi/github/1337/C10/ex02",
+    "file": "/home/mehdi/github/1337/C10/ex02/srcs/read.c",
+    "output": "/home/mehdi/github/1337/C10/ex02/srcs/read.o"
+  }
+]

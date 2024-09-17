@@ -6,7 +6,7 @@
 /*   By: mehdi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 18:08:57 by mehdi             #+#    #+#             */
-/*   Updated: 2024/08/28 00:58:55 by mehdi            ###   ########.fr       */
+/*   Updated: 2024/09/18 00:45:41 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ void	read_file(char *filename, long long bytes)
 		error(filename, errno);
 		return ;
 	}
-	print_name(filename);
 	skip_read(fd, bytes, filename);
 	read_bytes = 1;
 	while (read_bytes > 0)
@@ -81,5 +80,30 @@ void	read_file(char *filename, long long bytes)
 
 void	read_input(long long bytes)
 {
-	(void)bytes;
+	char	*buffer;
+	int		pos;
+	int		is_repeat;
+	int		read_byte;
+
+	pos = 0;
+	is_repeat = 0;
+	buffer = malloc(sizeof(char) * (bytes + 1));
+	if (!buffer)
+		return ;
+	while (1)
+	{
+		read_byte = read(0, &buffer[pos], bytes - pos);
+		if (read_byte < 0)
+			return (error("", errno));
+		if (read_byte == 0)
+			break ;
+		if (!is_repeat)
+			is_repeat = pos >= bytes - read_byte;
+		pos += read_byte;
+		pos %= bytes;
+	}
+	if (is_repeat)
+		write(1, buffer + pos, bytes - pos);
+	write(1, buffer, pos);
+	free(buffer);
 }
