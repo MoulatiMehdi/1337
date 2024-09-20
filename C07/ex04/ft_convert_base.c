@@ -6,16 +6,17 @@
 /*   By: mmoulati <mmoulati@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 20:18:04 by mmoulati          #+#    #+#             */
-/*   Updated: 2024/07/12 20:18:06 by mmoulati         ###   ########.fr       */
+/*   Updated: 2024/09/20 00:59:48 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <stdlib.h>
 
 int		ft_radix(char *base);
 void	skip_space(char **str, int *sign);
 int		ft_index(char *base, char c);
-int		ft_helpers(long *big, long *tmp, int radix);
+int		ft_helpers(long *big, int *tmp, int radix);
 
 int	ft_atoi_base(char *str, char *base, int radix)
 {
@@ -41,7 +42,7 @@ char	*ft_itoa_base(int nbr, char *base, int radix)
 {
 	int		len;
 	long	big;
-	long	tmp;
+	int		tmp;
 	char	*p;
 	int		i;
 

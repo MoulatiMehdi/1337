@@ -6,7 +6,7 @@
 /*   By: mmoulati <mmoulati@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 20:18:10 by mmoulati          #+#    #+#             */
-/*   Updated: 2024/07/12 20:18:12 by mmoulati         ###   ########.fr       */
+/*   Updated: 2024/09/20 00:59:18 by mmoulati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	skip_space(char **str, int *sign)
 	}
 }
 
-int	ft_helpers(long *big, long *tmp, int radix)
+int	ft_helpers(long *big, int *tmp, int radix)
 {
 	int	len;
 
@@ -65,7 +65,10 @@ int	ft_helpers(long *big, long *tmp, int radix)
 	*big = 1;
 	if (*tmp < 0)
 	{
-		*tmp *= -1;
+		if (*tmp == -2147483648)
+			*tmp = 0;
+		else
+			*tmp *= -1;
 		len++;
 	}
 	while ((*tmp) / (*big) >= radix)
