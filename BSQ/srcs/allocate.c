@@ -13,10 +13,10 @@
 #include "ft.h"
 #include <stdio.h>
 
-int **create_matrix(int rows, int cols)
+int	**create_matrix(int rows, int cols)
 {
-	int **arr;
-	int i;
+	int	**arr;
+	int	i;
 
 	arr = (int **)malloc(sizeof(int *) * (rows + 1));
 	i = 0;
@@ -29,9 +29,9 @@ int **create_matrix(int rows, int cols)
 	return (arr);
 }
 
-void init_matrix(int **matrx, struct s_grid map)
+void	init_matrix(int **matrx, struct s_grid map)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < map.height)
@@ -47,13 +47,13 @@ void init_matrix(int **matrx, struct s_grid map)
 	}
 }
 
-void free_grid(void ***arr_2d)
+void	free_grid(void ***arr_2d)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!*arr_2d)
-		return;
+		return ;
 	while (((*arr_2d)[i]) != NULL)
 	{
 		free((*arr_2d)[i]);

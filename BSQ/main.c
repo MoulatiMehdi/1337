@@ -11,10 +11,12 @@
 /* ************************************************************************** */
 
 #include "ft.h"
-int main(int argc, char **argv)
+
+int	main(int argc, char **argv)
 {
-	int i;
-	char *text;
+	int		i;
+	char	*text;
+
 	if (argc < 2)
 	{
 		text = read_input();
