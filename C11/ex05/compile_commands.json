@@ -1,0 +1,92 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-fsanitize=address",
+      "-c",
+      "-I./includes/",
+      "-o",
+      "srcs/puts.o",
+      "srcs/puts.c"
+    ],
+    "directory": "/home/mehdi/github/1337/C11/ex05",
+    "file": "/home/mehdi/github/1337/C11/ex05/srcs/puts.c",
+    "output": "/home/mehdi/github/1337/C11/ex05/srcs/puts.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-fsanitize=address",
+      "-c",
+      "-I./includes/",
+      "-o",
+      "srcs/ft_atoi.o",
+      "srcs/ft_atoi.c"
+    ],
+    "directory": "/home/mehdi/github/1337/C11/ex05",
+    "file": "/home/mehdi/github/1337/C11/ex05/srcs/ft_atoi.c",
+    "output": "/home/mehdi/github/1337/C11/ex05/srcs/ft_atoi.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-fsanitize=address",
+      "-c",
+      "-I./includes/",
+      "-o",
+      "srcs/calc.o",
+      "srcs/calc.c"
+    ],
+    "directory": "/home/mehdi/github/1337/C11/ex05",
+    "file": "/home/mehdi/github/1337/C11/ex05/srcs/calc.c",
+    "output": "/home/mehdi/github/1337/C11/ex05/srcs/calc.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-fsanitize=address",
+      "-c",
+      "-I./includes/",
+      "-o",
+      "srcs/do-op.o",
+      "srcs/do-op.c"
+    ],
+    "directory": "/home/mehdi/github/1337/C11/ex05",
+    "file": "/home/mehdi/github/1337/C11/ex05/srcs/do-op.c",
+    "output": "/home/mehdi/github/1337/C11/ex05/srcs/do-op.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-g",
+      "-fsanitize=address",
+      "-c",
+      "-I./includes/",
+      "-o",
+      "srcs/main.o",
+      "srcs/main.c"
+    ],
+    "directory": "/home/mehdi/github/1337/C11/ex05",
+    "file": "/home/mehdi/github/1337/C11/ex05/srcs/main.c",
+    "output": "/home/mehdi/github/1337/C11/ex05/srcs/main.o"
+  }
+]
